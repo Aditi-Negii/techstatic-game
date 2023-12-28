@@ -1,7 +1,9 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
+import 'package:flame/palette.dart';
 import 'package:flame/parallax.dart';
 import 'package:flame/sprite.dart';
 import 'package:flame/components.dart';
@@ -30,9 +32,9 @@ class SpacescapeGame extends FlameGame
     with
         HasCollisionDetection,
         HasKeyboardHandlerComponents,
-        PanDetector,
-        // ignore: deprecated_member_use
-        HasDraggables {
+        HasGameReference<SpacescapeGame>
+// PanDetector
+{
   // late final JoystickComponent joystick;
   late final JoystickComponent joystick;
   // The whole game world.
@@ -72,10 +74,10 @@ class SpacescapeGame extends FlameGame
   // Returns the size of the playable area of the game window.
   Vector2 fixedResolution = Vector2(540, 960);
 
-  //needed to move player 
+  //needed to move player
   Offset? _pointerStartPosition;
   //Player class refernce
-  //not needed  
+  //not needed
   // late Player player;
 
   // This method gets called by Flame before the game-loop begins.
@@ -111,19 +113,41 @@ class SpacescapeGame extends FlameGame
 
       // add(joystick);
 
-      //Create a basic joystick component on left.
-      final joystick = JoystickComponent(
-        anchor: Anchor.bottomRight,
-        margin: const EdgeInsets.only(left: 40, bottom: 20),
-        // position: Vector2(30, fixedResolution.y - 30),
-        // size: 100,
-        background: CircleComponent(
-          radius: 60,
-          paint: Paint()..color = Colors.white.withOpacity(0.5),
-        ),
-        knob: CircleComponent(
-            radius: 20, paint: Paint()..color = Colors.black.withOpacity(0.8)),
+      final knobPaint = BasicPalette.blue.withAlpha(200).paint();
+      final backgroundPaint = BasicPalette.blue.withAlpha(100).paint();
+      joystick = JoystickComponent(
+        knob: CircleComponent(radius: 30, paint: knobPaint),
+        background: CircleComponent(radius: 100, paint: backgroundPaint),
+        margin: const EdgeInsets.only(left: 40, bottom: 40),
       );
+
+      /// As build context is not valid in onLoad() method, we
+      /// cannot get current [PlayerData] here. So initilize player
+      /// with the default SpaceshipType.Canary.
+      const spaceshipType = SpaceshipType.canary;
+      final spaceship = Spaceship.getSpaceshipByType(spaceshipType);
+
+      _player = Player(
+        joystick: joystick,
+        spaceshipType: spaceshipType,
+        sprite: spriteSheet.getSpriteById(spaceship.spriteId),
+        size: Vector2(64, 64),
+        // position: fixedResolution / 2,
+      );
+
+      // world.add(_player);
+      // camera.viewport.add(joystick);
+
+      //Create a basic joystick component on left.
+      // final joystick = JoystickComponent(
+      //   margin: const EdgeInsets.only(left: 40, bottom: 20),
+      //   background: CircleComponent(
+      //     radius: 60,
+      //     paint: Paint()..color = Colors.white.withOpacity(0.5),
+      //   ),
+      //   knob: CircleComponent(
+      //       radius: 20, paint: Paint()..color = Colors.black.withOpacity(0.8)),
+      // );
 
       primaryCamera = CameraComponent.withFixedResolution(
         world: world,
@@ -142,19 +166,19 @@ class SpacescapeGame extends FlameGame
         size: fixedResolution,
       );
 
-      /// As build context is not valid in onLoad() method, we
-      /// cannot get current [PlayerData] here. So initilize player
-      /// with the default SpaceshipType.Canary.
-      const spaceshipType = SpaceshipType.canary;
-      final spaceship = Spaceship.getSpaceshipByType(spaceshipType);
+      // /// As build context is not valid in onLoad() method, we
+      // /// cannot get current [PlayerData] here. So initilize player
+      // /// with the default SpaceshipType.Canary.
+      // const spaceshipType = SpaceshipType.canary;
+      // final spaceship = Spaceship.getSpaceshipByType(spaceshipType);
 
-      _player = Player(
-        joystick: joystick,
-        spaceshipType: spaceshipType,
-        sprite: spriteSheet.getSpriteById(spaceship.spriteId),
-        size: Vector2(64, 64),
-        position: fixedResolution / 2,
-      );
+      // _player = Player(
+      //   joystick: joystick,
+      //   spaceshipType: spaceshipType,
+      //   sprite: spriteSheet.getSpriteById(spaceship.spriteId),
+      //   size: Vector2(64, 64),
+      //   position: fixedResolution / 2,
+      // );
 
       // Makes sure that the sprite is centered.
       _player.anchor = Anchor.center;
@@ -230,29 +254,31 @@ class SpacescapeGame extends FlameGame
     }
   }
 
-  //to move the player 
+  //to move the player
 
-  @override
-  void onPanStart(DragStartInfo info) {
-   _pointerStartPosition = info.raw.globalPosition;
-  }
-  @override
-  void onPanUpdate(DragUpdateInfo info) {
-    final pointerCurrentPostion = info.raw.globalPosition;
+  // @override
+  // void onPanStart(DragStartInfo info) {
+  //   _pointerStartPosition = info.raw.globalPosition;
+  // }
 
-    var delta = pointerCurrentPostion - _pointerStartPosition!;
-    _player.setMoveDirection(Vector2(delta.dx, delta.dy));
-  }
-  @override
-  void onPanEnd(DragEndInfo info) {
-    _pointerStartPosition = null;
-    _player.setMoveDirection(Vector2.zero());
-  }
-  @override
-  void onPanCancel() {
-    _pointerStartPosition = null;
-  }
+  // @override
+  // void onPanUpdate(DragUpdateInfo info) {
+  //   final pointerCurrentPostion = info.raw.globalPosition;
 
+  //   var delta = pointerCurrentPostion - _pointerStartPosition!;
+  //   _player.setMoveDirection(Vector2(delta.dx, delta.dy));
+  // }
+
+  // @override
+  // void onPanEnd(DragEndInfo info) {
+  //   _pointerStartPosition = null;
+  //   _player.setMoveDirection(Vector2.zero());
+  // }
+
+  // @override
+  // void onPanCancel() {
+  //   _pointerStartPosition = null;
+  // }
 
   // This method gets called when game instance gets attached
   // to Flutter's widget tree.
