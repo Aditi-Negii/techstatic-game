@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame/parallax.dart';
@@ -28,6 +30,7 @@ class SpacescapeGame extends FlameGame
     with
         HasCollisionDetection,
         HasKeyboardHandlerComponents,
+        PanDetector,
         // ignore: deprecated_member_use
         HasDraggables {
   // late final JoystickComponent joystick;
@@ -68,6 +71,12 @@ class SpacescapeGame extends FlameGame
 
   // Returns the size of the playable area of the game window.
   Vector2 fixedResolution = Vector2(540, 960);
+
+  //needed to move player 
+  Offset? _pointerStartPosition;
+  //Player class refernce
+  //not needed  
+  // late Player player;
 
   // This method gets called by Flame before the game-loop begins.
   // Assets loading and adding component should be done here.
@@ -191,7 +200,7 @@ class SpacescapeGame extends FlameGame
       );
 
       // Anchor to top right as we want the top right
-      // corner of this component to be at a specific position.
+      // corner    of this component to be at a specific position.
       _playerHealth.anchor = Anchor.topRight;
 
       // Add the blue bar indicating health.
@@ -220,6 +229,30 @@ class SpacescapeGame extends FlameGame
       _isAlreadyLoaded = true;
     }
   }
+
+  //to move the player 
+
+  @override
+  void onPanStart(DragStartInfo info) {
+   _pointerStartPosition = info.raw.globalPosition;
+  }
+  @override
+  void onPanUpdate(DragUpdateInfo info) {
+    final pointerCurrentPostion = info.raw.globalPosition;
+
+    var delta = pointerCurrentPostion - _pointerStartPosition!;
+    _player.setMoveDirection(Vector2(delta.dx, delta.dy));
+  }
+  @override
+  void onPanEnd(DragEndInfo info) {
+    _pointerStartPosition = null;
+    _player.setMoveDirection(Vector2.zero());
+  }
+  @override
+  void onPanCancel() {
+    _pointerStartPosition = null;
+  }
+
 
   // This method gets called when game instance gets attached
   // to Flutter's widget tree.
