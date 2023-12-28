@@ -56,6 +56,10 @@ class Player extends SpriteComponent
     return (Vector2.random(_random) - Vector2(0.5, -1)) * 200;
   }
 
+  //to move the player
+  Vector2 _moveDirection= Vector2.zero();
+  double _speed = 300;
+
   Player({
     required this.joystick,
     required this.spaceshipType,
@@ -69,6 +73,18 @@ class Player extends SpriteComponent
     _powerUpTimer = Timer(4, onTick: () {
       _shootMultipleBullets = false;
     });
+  }
+
+  //override the update method from base class
+  @override
+  void updateTree(double dt) {
+    super.updateTree(dt);
+
+    this.position += _moveDirection.normalized() * _speed * dt; 
+  }
+
+  void setMoveDirection(Vector2 newMoveDirection){
+    _moveDirection = newMoveDirection;
   }
 
   @override
