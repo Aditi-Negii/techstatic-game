@@ -113,12 +113,12 @@ class SpacescapeGame extends FlameGame
 
       // add(joystick);
 
-      final knobPaint = BasicPalette.blue.withAlpha(200).paint();
-      final backgroundPaint = BasicPalette.blue.withAlpha(100).paint();
+      final knobPaint = Paint()..color = Colors.white.withOpacity(0.9);
+      final backgroundPaint = Paint()..color = Colors.white.withOpacity(0.5);
       joystick = JoystickComponent(
-        knob: CircleComponent(radius: 30, paint: knobPaint),
-        background: CircleComponent(radius: 100, paint: backgroundPaint),
-        margin: const EdgeInsets.only(left: 40, bottom: 40),
+        knob: CircleComponent(radius: 25, paint: knobPaint),
+        background: CircleComponent(radius: 70, paint: backgroundPaint),
+        margin: const EdgeInsets.only(left: 40, bottom: 20),
       );
 
       /// As build context is not valid in onLoad() method, we
@@ -132,7 +132,7 @@ class SpacescapeGame extends FlameGame
         spaceshipType: spaceshipType,
         sprite: spriteSheet.getSpriteById(spaceship.spriteId),
         size: Vector2(64, 64),
-        // position: fixedResolution / 2,
+        position: fixedResolution / 2,
       );
 
       // world.add(_player);
@@ -281,6 +281,7 @@ class SpacescapeGame extends FlameGame
   // }
 
   // This method gets called when game instance gets attached
+
   // to Flutter's widget tree.
   @override
   void onAttach() {
@@ -290,7 +291,7 @@ class SpacescapeGame extends FlameGame
       // Update the current spaceship type of player.
       _player.setSpaceshipType(playerData.spaceshipType);
     }
-    _audioPlayerComponent.playBgm('9. Space Invaders.wav');
+    _audioPlayerComponent.playBgm('background_music.wav');
     super.onAttach();
   }
 

@@ -18,7 +18,7 @@ class AudioPlayerComponent extends Component
 
     try {
       await FlameAudio.audioCache.load(
-        '9. Space Invaders.wav',
+        'background_music.wav',
       );
     } catch (_) {
       // ignore: avoid_print
