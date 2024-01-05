@@ -40,7 +40,7 @@ class GamePlay extends StatelessWidget {
                 ),
             GameOverMenu.id: (BuildContext context, SpacescapeGame game) =>
                 GameOverMenu(
-                  game: game,
+                  game: game, 
                 ),
           },
         ),
