@@ -281,7 +281,7 @@ class Player extends SpriteComponent
   // while restarting and exiting the game.
   void reset() {
     _playerData.currentScore = 0;
-    _health = 10;
+    _health = 100;
     position = game.fixedResolution / 2;
   }
 

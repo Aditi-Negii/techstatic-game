@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable
 
-import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 import 'package:gsheets/gsheets.dart';
-import 'package:spacescape/game/player.dart';
 
 import '../../game/game.dart';
 import '../../screens/main_menu.dart';
@@ -88,7 +86,11 @@ class GameOverMenu extends StatelessWidget {
                   ),
                   ),
               ),
-              Text('Your Current score is : $score')
+
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text('Your Current score is : $score'),
+              )
             ]),
           ),
 

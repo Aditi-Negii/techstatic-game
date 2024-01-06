@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, unused_field, implementation_imports
 
 import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
@@ -6,6 +6,7 @@ import 'package:flame/input.dart';
 import 'package:flame/parallax.dart';
 import 'package:flame/sprite.dart';
 import 'package:flame/components.dart';
+// ignore: unused_import
 import 'package:flame/src/text/text_renderer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
