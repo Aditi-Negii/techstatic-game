@@ -1,7 +1,9 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable
 
+import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 import 'package:gsheets/gsheets.dart';
+import 'package:spacescape/game/player.dart';
 
 import '../../game/game.dart';
 import '../../screens/main_menu.dart';
@@ -10,9 +12,10 @@ import 'pause_button.dart';
 // This class represents the game over menu overlay.
 class GameOverMenu extends StatelessWidget {
   static const String id = 'GameOverMenu';
+  static late int score;
   final SpacescapeGame game;
   late int phoneNumber;
-  late int finalScore;
+  late String finalScorePlayer;
 
   GameOverMenu({super.key, required this.game});
   
@@ -44,8 +47,8 @@ class GameOverMenu extends StatelessWidget {
 
   final sheetsId = '1V15hUng0U8FKwUxfBT2Bav0C8E127JGiWMaeXYpzKwc';
   final worksheetId = 2146561186;
-  final gsheets = GSheets(credentials);
-
+  late final gsheets = GSheets(credentials);
+  
 
 
   @override
@@ -84,7 +87,8 @@ class GameOverMenu extends StatelessWidget {
                     color:Colors.white,
                   ),
                   ),
-              )
+              ),
+              Text('Your Current score is : $score')
             ]),
           ),
 
@@ -113,7 +117,7 @@ class GameOverMenu extends StatelessWidget {
 
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) => const MainMenu(),
+                    builder: (context) =>  MainMenu(),
                   ),
                 );
               },

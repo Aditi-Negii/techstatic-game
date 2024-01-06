@@ -3,12 +3,11 @@
 import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
-import 'package:flame/palette.dart';
 import 'package:flame/parallax.dart';
 import 'package:flame/sprite.dart';
 import 'package:flame/components.dart';
+import 'package:flame/src/text/text_renderer.dart';
 import 'package:flutter/material.dart';
-import 'package:gsheets/gsheets.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/overlays/pause_menu.dart';
@@ -56,8 +55,8 @@ class SpacescapeGame extends FlameGame
   late PowerUpManager _powerUpManager;
 
   // Displays player score on top left.
-  late TextComponent _playerScore;
-
+   late TextComponent _playerScore;
+  
   // Displays player helth on top right.
   late TextComponent _playerHealth;
 
@@ -230,7 +229,6 @@ class SpacescapeGame extends FlameGame
       // Anchor to top right as we want the top right
       // corner    of this component to be at a specific position.
       _playerHealth.anchor = Anchor.topRight;
-
       // Add the blue bar indicating health.
       final healthBar = HealthBar(
         player: _player,
@@ -362,6 +360,7 @@ class SpacescapeGame extends FlameGame
       // if (_player.health <= 0 && (!camera.shaking)) {
       if (_player.health <= 0) {
         pauseEngine();
+        GameOverMenu.score = _player.score;
         overlays.remove(PauseButton.id);
         overlays.add(GameOverMenu.id);
       }
@@ -419,4 +418,5 @@ class SpacescapeGame extends FlameGame
       powerUp.removeFromParent();
     });
   }
+
 }
