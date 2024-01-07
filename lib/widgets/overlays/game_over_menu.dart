@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'package:gsheets/gsheets.dart';
@@ -13,14 +13,14 @@ class GameOverMenu extends StatelessWidget {
   static late int score;
   final SpacescapeGame game;
   late int phoneNumber;
-  late String finalScorePlayer;
-  TextEditingController phoneNumberController  = TextEditingController();
+  // late int finalScorePlayer;
+  TextEditingController phoneNumberController = TextEditingController();
 
   GameOverMenu({super.key, required this.game});
-  
-    //save data to google sheets
 
-  late Worksheet worksheet =gsheets.spreadsheet(sheetsId).worksheetByTitle('user');
+  //save data to google sheets
+// late Worksheet worksheet =  gsheets.worksheetByTitle('user');
+  // late  Worksheet worksheet =  gsheets.spreadsheet(sheetsId).worksheetByTitle('user');
   //sheet credentials:
   String credentials = r'''
   {
@@ -38,8 +38,10 @@ class GameOverMenu extends StatelessWidget {
 
 ''';
 
-
 //to add the data to sheets
+  var mobile = TextEditingController();
+
+  // Game sheet details
 
   Future<bool> insertData(int mobile, int score, Worksheet workSheet) {
     return workSheet.values
@@ -47,10 +49,9 @@ class GameOverMenu extends StatelessWidget {
   }
 
   final sheetsId = '1V15hUng0U8FKwUxfBT2Bav0C8E127JGiWMaeXYpzKwc';
-  final worksheetId = 2146561186;
+  // final worksheetId = 2146561186;
+  final worksheetId = 0;
   late final gsheets = GSheets(credentials);
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +102,7 @@ class GameOverMenu extends StatelessWidget {
 
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) =>  MainMenu(),
+                    builder: (context) => MainMenu(),
                   ),
                 );
               },
@@ -111,42 +112,66 @@ class GameOverMenu extends StatelessWidget {
           SizedBox(
             width: MediaQuery.of(context).size.width / 3,
             child: ElevatedButton(
-              onPressed: ()=> showDialog<String>(
-        context: context,
-        builder: (BuildContext context) => AlertDialog(
-          title:  Text('Submit your Score'),
-          content: Text('Your Curent Score is $score'),
-          actions: <Widget>[
-            TextField(
-              controller: phoneNumberController,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: 'Enter Phone Number',
-        ),
-      ),
-            TextButton(
-              onPressed: () => Navigator.pop(context, 'Cancel'),
-              child: Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: () {
-                phoneNumber = phoneNumberController.text as int;
-                //insertData(phoneNumber, score, workSheet);
-                Navigator.pop(context, 'Submit');
-                }
-                ,
-              child: const Text('Submit'),
-            ),
-          ],
-        ),
-      ),
-      child: const Text('Submit Score'),
+              onPressed: () => showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: Text('Submit your Score'),
+                  content: Text('Your Curent Score is $score'),
+                  actions: <Widget>[
+                    TextField(
+                      controller: phoneNumberController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Enter Phone Number',
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, 'Cancel'),
+                      child: Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () async {
+                        // phoneNumber = phoneNumberController.text as int;
+                        // //insertData(phoneNumber, score, workSheet);
+                        // Navigator.pop(context, 'Submit');
+
+                        try {
+                          // Open sheet
+                          final sheet = await gsheets.spreadsheet(sheetsId);
+                          // sheet.worksheetByTitle(title)
+                          var workSheet = sheet.worksheetById(worksheetId);
+
+                          // phoneNumber = int.parse(phoneNumberController.text);
+                          // print(phoneNumber);
+                          insertData(phoneNumber, score, workSheet!);
+
+                          // Insert data into sheet
+                          // insertData(var
+                          //     int.parse(phoneNumber.toString()),
+                          //     score,
+                          //     workSheet!);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Data received successfully !')),
+                          );
+                        } catch (e) {
+                          print(e);
+                          // ScaffoldMessenger.of(context).showSnackBar(
+                          //   const SnackBar(
+                          //       content: Text('Unexpected error occured !')),
+                          // );
+                        }
+                      },
+                      child: const Text('Submit'),
+                    ),
+                  ],
+                ),
+              ),
+              child: const Text('Submit Score'),
             ),
           ),
         ],
       ),
     );
   }
-
-
 }
