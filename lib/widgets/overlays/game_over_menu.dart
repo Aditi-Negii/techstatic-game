@@ -19,6 +19,8 @@ class GameOverMenu extends StatelessWidget {
   GameOverMenu({super.key, required this.game});
   
     //save data to google sheets
+
+  late Worksheet worksheet =gsheets.spreadsheet(sheetsId).worksheetByTitle('user');
   //sheet credentials:
   String credentials = r'''
   {
@@ -47,7 +49,7 @@ class GameOverMenu extends StatelessWidget {
   final sheetsId = '1V15hUng0U8FKwUxfBT2Bav0C8E127JGiWMaeXYpzKwc';
   final worksheetId = 2146561186;
   late final gsheets = GSheets(credentials);
-  
+
 
 
   @override
