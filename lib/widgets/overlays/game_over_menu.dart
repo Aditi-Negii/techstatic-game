@@ -133,7 +133,8 @@ class GameOverMenu extends StatelessWidget {
                     TextButton(
                       onPressed: () {
                         int tempScore = score;
-                        post(phoneNumberController.text, tempScore); 
+                        print(phoneNumberController.text);
+                        post(phoneNumberController.text, score); 
                         Navigator.pop(context, 'Submit');
                       },
                       child: const Text('Submit'),
