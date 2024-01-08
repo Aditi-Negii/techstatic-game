@@ -19,13 +19,13 @@ class GoogleSheetsApi{
   }
   ''';
 
-  static const spreadsheetId =  '1V15hUng0U8FKwUxfBT2Bav0C8E127JGiWMaeXYpzKwc';
+  static const spreadsheetId =  '1k1wDVTErIPNNZzAgP6XQNIRmpDaS2yRXJIZJVSWP6Vk';
   static final _gsheets = GSheets(credentials);
   static Worksheet? _workSheet;
 
   Future init() async{
     final ss = await _gsheets.spreadsheet(spreadsheetId);
-    _workSheet = ss.worksheetByTitle('user');
+    _workSheet = ss.worksheetByTitle('WorkSheet1');
   }
 
   static Future insert(String mobileNumber, int score) async{

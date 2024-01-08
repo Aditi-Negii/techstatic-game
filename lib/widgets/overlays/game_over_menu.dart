@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gsheets/gsheets.dart';
+import 'package:spacescape/widgets/overlays/google_sheets_api.dart';
 
 import '../../game/game.dart';
 import '../../screens/main_menu.dart';
@@ -131,8 +132,9 @@ class GameOverMenu extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        String phoneNumber = phoneNumberController.text;
-                        
+                        int tempScore = score;
+                        post(phoneNumberController.text, tempScore); 
+                        Navigator.pop(context, 'Submit');
                       },
                       child: const Text('Submit'),
                     ),
@@ -145,5 +147,10 @@ class GameOverMenu extends StatelessWidget {
         ],
       ),
     );
+  }
+  
+  void post(mobileNumber, score) {
+    GoogleSheetsApi.insert(mobileNumber, score);
+    print('data added');
   }
 }
