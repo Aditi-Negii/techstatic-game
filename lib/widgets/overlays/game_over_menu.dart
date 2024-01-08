@@ -130,37 +130,9 @@ class GameOverMenu extends StatelessWidget {
                       child: Text('Cancel'),
                     ),
                     TextButton(
-                      onPressed: () async {
-                        // phoneNumber = phoneNumberController.text as int;
-                        // //insertData(phoneNumber, score, workSheet);
-                        // Navigator.pop(context, 'Submit');
-
-                        try {
-                          // Open sheet
-                          final sheet = await gsheets.spreadsheet(sheetsId);
-                          // sheet.worksheetByTitle(title)
-                          var workSheet = sheet.worksheetById(worksheetId);
-
-                          // phoneNumber = int.parse(phoneNumberController.text);
-                          // print(phoneNumber);
-                          insertData(phoneNumber, score, workSheet!);
-
-                          // Insert data into sheet
-                          // insertData(var
-                          //     int.parse(phoneNumber.toString()),
-                          //     score,
-                          //     workSheet!);
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: Text('Data received successfully !')),
-                          );
-                        } catch (e) {
-                          print(e);
-                          // ScaffoldMessenger.of(context).showSnackBar(
-                          //   const SnackBar(
-                          //       content: Text('Unexpected error occured !')),
-                          // );
-                        }
+                      onPressed: () {
+                        String phoneNumber = phoneNumberController.text;
+                        
                       },
                       child: const Text('Submit'),
                     ),

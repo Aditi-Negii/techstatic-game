@@ -2,6 +2,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:spacescape/widgets/overlays/google_sheets_api.dart';
 
 import 'models/settings.dart';
 import 'screens/main_menu.dart';
@@ -9,6 +10,7 @@ import 'models/player_data.dart';
 import 'models/spaceship_details.dart';
 
 Future<void> main() async {
+  GoogleSheetsApi().init();
   WidgetsFlutterBinding.ensureInitialized();
 
   // This opens the app in fullscreen mode.
