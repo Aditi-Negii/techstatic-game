@@ -108,7 +108,7 @@ class GameOverMenu extends StatelessWidget {
                   ],
                 ),
               ),
-              child: const Text('Submit Score'),
+              child: Text('Submit Score'),
             ),
           ),
         ],
@@ -117,7 +117,12 @@ class GameOverMenu extends StatelessWidget {
   }
   
   void post(mobileNumber, score) {
-    GoogleSheetsApi.insert(mobileNumber, score);
+    RegExp phoneNumberCheck = RegExp( r'(\d{10})',);
+    String mobNo = mobileNumber;
+    Match? match = phoneNumberCheck.firstMatch(mobNo);
+    if(match != null){
+      GoogleSheetsApi.insert(mobileNumber, score);
+    }
     print('data added');
   }
 }
