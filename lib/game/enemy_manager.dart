@@ -29,7 +29,7 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
 
   EnemyManager({required this.spriteSheet}) : super() {
     // Sets the timer to call _spawnEnemy() after every 1 second, until timer is explicitly stops.
-    _timer = Timer(1, onTick: _spawnEnemy, repeat: true);
+    _timer = Timer(0.5, onTick: _spawnEnemy, repeat: true);
 
     // Sets freeze time to 2 seconds. After 2 seconds spawn timer will start again.
     _freezeTimer = Timer(2, onTick: () {
@@ -136,91 +136,91 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
   /// A private list of all [EnemyData]s.
   static const List<EnemyData> _enemyDataList = [
     EnemyData(
-      killPoint: 1,
+      killPoint: 5,
       speed: 200,
       spriteId: 8,
       level: 1,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 2,
+      killPoint: 5,
       speed: 200,
       spriteId: 9,
       level: 1,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 4,
+      killPoint: 10,
       speed: 200,
       spriteId: 10,
       level: 1,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 4,
+      killPoint: 10,
       speed: 200,
       spriteId: 11,
       level: 1,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 6,
+      killPoint: 20,
       speed: 250,
       spriteId: 12,
       level: 2,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 6,
+      killPoint: 20,
       speed: 250,
       spriteId: 13,
       level: 2,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 6,
+      killPoint: 30,
       speed: 250,
       spriteId: 14,
       level: 2,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 6,
+      killPoint: 30,
       speed: 250,
       spriteId: 15,
       level: 2,
       hMove: true,
     ),
     EnemyData(
-      killPoint: 10,
+      killPoint: 30,
       speed: 350,
       spriteId: 16,
       level: 3,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 10,
+      killPoint: 40,
       speed: 350,
       spriteId: 17,
       level: 3,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 10,
+      killPoint: 30,
       speed: 400,
       spriteId: 18,
       level: 3,
       hMove: true,
     ),
     EnemyData(
-      killPoint: 10,
+      killPoint: 30,
       speed: 400,
       spriteId: 19,
       level: 3,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 10,
+      killPoint: 30,
       speed: 400,
       spriteId: 20,
       level: 4,
@@ -249,3 +249,4 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
     )
   ];
 }
+  
