@@ -124,7 +124,7 @@ class Player extends SpriteComponent
       //   ),
       // );
 
-      _health -= 10;
+      _health -= 20;
       if (_health <= 0) {
         _health = 0;
         _playerScoreStore = _playerData.currentScore;
