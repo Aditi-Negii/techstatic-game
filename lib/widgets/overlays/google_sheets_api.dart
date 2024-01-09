@@ -29,10 +29,8 @@ class GoogleSheetsApi{
   }
 
   static Future insert(String mobileNumber, int score) async{
-    if(_workSheet==null )return print('didnt work');
-    //await _workSheet!.values.appendRow([mobileNumber]);
+    if(_workSheet==null )return;
     await _workSheet!.values.appendRow([mobileNumber, score]);
-    //await _workSheet!.values.appendRows([[mobileNumber],[score]],  );
   }
   
 
