@@ -94,7 +94,7 @@ class GameOverMenu extends StatelessWidget {
           ),
           // Restart button.
           SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
+            width: MediaQuery.of(context).size.width / 2,
             child: ElevatedButton(
               onPressed: () {
                 game.overlays.remove(GameOverMenu.id);
