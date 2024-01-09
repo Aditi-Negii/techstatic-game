@@ -249,3 +249,4 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
     )
   ];
 }
+  

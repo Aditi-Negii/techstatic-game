@@ -94,7 +94,7 @@ class GameOverMenu extends StatelessWidget {
           ),
           // Restart button.
           SizedBox(
-            width: MediaQuery.of(context).size.width / 2,
+            width: MediaQuery.of(context).size.width / 3,
             child: ElevatedButton(
               onPressed: () {
                 game.overlays.remove(GameOverMenu.id);
@@ -108,7 +108,7 @@ class GameOverMenu extends StatelessWidget {
 
           // Exit button.
           SizedBox(
-            width: MediaQuery.of(context).size.width / 2,
+            width: MediaQuery.of(context).size.width / 3,
             child: ElevatedButton(
               onPressed: () {
                 game.overlays.remove(GameOverMenu.id);
@@ -131,7 +131,7 @@ class GameOverMenu extends StatelessWidget {
   }
   
   void post(mobileNumber, score) {
-    RegExp phoneNumberCheck = RegExp( r'(\d{10})',);
+    RegExp phoneNumberCheck = RegExp(r'^[0-9]{10}$',);
     String mobNo = mobileNumber;
     Match? match = phoneNumberCheck.firstMatch(mobNo);
     if(match != null){
