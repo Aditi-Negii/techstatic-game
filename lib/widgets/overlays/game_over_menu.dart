@@ -45,38 +45,7 @@ class GameOverMenu extends StatelessWidget {
               ),
             ),
           ),
-          // Restart button.
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
-            child: ElevatedButton(
-              onPressed: () {
-                game.overlays.remove(GameOverMenu.id);
-                game.overlays.add(PauseButton.id);
-                game.reset();
-                game.resumeEngine();
-              },
-              child: const Text('Restart'),
-            ),
-          ),
 
-          // Exit button.
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
-            child: ElevatedButton(
-              onPressed: () {
-                game.overlays.remove(GameOverMenu.id);
-                game.reset();
-                game.resumeEngine();
-
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => MainMenu(),
-                  ),
-                );
-              },
-              child: const Text('Exit'),
-            ),
-          ),
           SizedBox(
             width: MediaQuery.of(context).size.width / 3,
             child: ElevatedButton(
@@ -99,9 +68,21 @@ class GameOverMenu extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        print(phoneNumberController.text);
-                        post(phoneNumberController.text, score); 
-                        Navigator.pop(context, 'Submit');
+                        try{
+                          print(phoneNumberController.text);
+                          post(phoneNumberController.text, score); 
+                          Navigator.pop(context, 'Submit');
+
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("Score Submitted Successfully !"))
+                          );
+                        }
+                        catch(e){
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("Unexpected Error Occured, Please try again later"))
+                          );
+                        }
+                        
                       },
                       child: const Text('Submit'),
                     ),
@@ -111,6 +92,39 @@ class GameOverMenu extends StatelessWidget {
               child: Text('Submit Score'),
             ),
           ),
+          // Restart button.
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 2,
+            child: ElevatedButton(
+              onPressed: () {
+                game.overlays.remove(GameOverMenu.id);
+                game.overlays.add(PauseButton.id);
+                game.reset();
+                game.resumeEngine();
+              },
+              child: const Text('Restart'),
+            ),
+          ),
+
+          // Exit button.
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 2,
+            child: ElevatedButton(
+              onPressed: () {
+                game.overlays.remove(GameOverMenu.id);
+                game.reset();
+                game.resumeEngine();
+
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => MainMenu(),
+                  ),
+                );
+              },
+              child: const Text('Exit'),
+            ),
+          ),
+          
         ],
       ),
     );
