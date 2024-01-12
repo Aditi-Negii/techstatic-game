@@ -20,11 +20,11 @@ class SettingsMenu extends StatelessWidget {
                 'Settings',
                 style: TextStyle(
                   fontSize: 50.0,
-                  color: Colors.black,
+                  color: Colors.blueAccent,
                   shadows: [
                     Shadow(
                       blurRadius: 20.0,
-                      color: Colors.white,
+                      color: Colors.purpleAccent,
                       offset: Offset(0, 0),
                     )
                   ],
