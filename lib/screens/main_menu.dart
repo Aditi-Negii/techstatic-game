@@ -19,14 +19,14 @@ class MainMenu extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 50.0),
               child: Text(
-                'Spacescape',
+                'Whacky Warp',
                 style: TextStyle(
                   fontSize: 50.0,
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 77, 77, 255),
                   shadows: [
                     Shadow(
                       blurRadius: 20.0,
-                      color: Colors.white,
+                      color: Colors.purpleAccent,
                       offset: Offset(0, 0),
                     )
                   ],

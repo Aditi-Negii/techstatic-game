@@ -27,11 +27,11 @@ class SelectSpaceship extends StatelessWidget {
                 'Select',
                 style: TextStyle(
                   fontSize: 50.0,
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 77,77, 255),
                   shadows: [
                     Shadow(
                       blurRadius: 20.0,
-                      color: Colors.white,
+                      color: Colors.purpleAccent,
                       offset: Offset(0, 0),
                     )
                   ],
@@ -47,8 +47,8 @@ class SelectSpaceship extends StatelessWidget {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('Ship: ${spaceship.name}'),
-                    Text('Money: ${playerData.money}'),
+                    Text('Ship: ${spaceship.name}', style: const TextStyle(color: Colors.blueAccent)),
+                    Text('Money: ${playerData.money}', style: const TextStyle(color: Colors.blueAccent)),
                   ],
                 );
               },
@@ -66,10 +66,10 @@ class SelectSpaceship extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(spaceship.assetPath),
-                      Text(spaceship.name),
-                      Text('Speed: ${spaceship.speed}'),
-                      Text('Level: ${spaceship.level}'),
-                      Text('Cost: ${spaceship.cost}'),
+                      Text(spaceship.name, style: const TextStyle(color: Colors.blueAccent)),
+                      Text('Speed: ${spaceship.speed}', style: const TextStyle(color: Colors.blueAccent)),
+                      Text('Level: ${spaceship.level}', style: const TextStyle(color: Colors.blueAccent)),
+                      Text('Cost: ${spaceship.cost}', style: const TextStyle(color: Colors.blueAccent)),
                       Consumer<PlayerData>(
                         builder: (context, playerData, child) {
                           final type =
