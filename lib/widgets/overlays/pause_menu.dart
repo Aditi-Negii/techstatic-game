@@ -45,7 +45,7 @@ class PauseMenu extends StatelessWidget {
                 game.overlays.remove(PauseMenu.id);
                 game.overlays.add(PauseButton.id);
               },
-              child: const Text('Resume'),
+              child: const Text('Resume', style: TextStyle(color: Colors.white),),
             ),
           ),
 
@@ -59,7 +59,7 @@ class PauseMenu extends StatelessWidget {
                 game.reset();
                 game.resumeEngine();
               },
-              child: const Text('Restart'),
+              child: const Text('Restart',style: TextStyle(color: Colors.white),),
             ),
           ),
 
@@ -78,7 +78,7 @@ class PauseMenu extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Exit'),
+              child: const Text('Exit', style: TextStyle(color: Colors.white),),
             ),
           ),
         ],

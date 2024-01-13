@@ -14,12 +14,9 @@ class GameOverMenu extends StatelessWidget {
   static late int score;
   final SpacescapeGame game;
   late int phoneNumber;
-  // late int finalScorePlayer;
   TextEditingController phoneNumberController = TextEditingController();
 
   GameOverMenu({super.key, required this.game});
-  
-  var mobile = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +35,7 @@ class GameOverMenu extends StatelessWidget {
                 shadows: [
                   Shadow(
                     blurRadius: 20.0,
-                    color: Colors.lightBlue,
+                    color: Color.fromARGB(0, 92, 225, 230),
                     offset: Offset(0, 0),
                   )
                 ],
@@ -64,32 +61,36 @@ class GameOverMenu extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () => Navigator.pop(context, 'Cancel'),
-                      child: Text('Cancel'),
+                      child: Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     TextButton(
                       onPressed: () {
-                        try{
+                        clearField();
+                        try {
                           print(phoneNumberController.text);
-                          post(phoneNumberController.text, score); 
+                          post(phoneNumberController.text, score);
                           Navigator.pop(context, 'Submit');
-
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("Score Submitted Successfully !"))
-                          );
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: const Text(
+                                  "Score Submitted Successfully !")));
+                        } catch (e) {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: const Text(
+                                  "Please Enter A Valid Phone Number")));
                         }
-                        catch(e){
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("Unexpected Error Occured, Please try again later"))
-                          );
-                        }
-                        
                       },
                       child: const Text('Submit'),
                     ),
                   ],
                 ),
               ),
-              child: Text('Submit Score'),
+              child: Text(
+                'Submit Score',
+                style: TextStyle(color: Colors.white, ),
+              ),
             ),
           ),
           // Restart button.
@@ -102,7 +103,10 @@ class GameOverMenu extends StatelessWidget {
                 game.reset();
                 game.resumeEngine();
               },
-              child: const Text('Restart'),
+              child: const Text(
+                'Restart',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
 
@@ -121,22 +125,32 @@ class GameOverMenu extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Exit'),
+              child: const Text(
+                'Exit',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
-          
         ],
       ),
     );
   }
-  
+
   void post(mobileNumber, score) {
-    RegExp phoneNumberCheck = RegExp(r'^[0-9]{10}$',);
+    RegExp phoneNumberCheck = RegExp(
+      r'^[0-9]{10}$',
+    );
     String mobNo = mobileNumber;
     Match? match = phoneNumberCheck.firstMatch(mobNo);
-    if(match != null){
+    if (match != null) {
       GoogleSheetsApi.insert(mobileNumber, score);
+      return;
     }
-    print('data added');
+
+    throw FormatException('enter valid phone number');
+  }
+
+  void clearField() {
+    phoneNumberController.clear();
   }
 }
