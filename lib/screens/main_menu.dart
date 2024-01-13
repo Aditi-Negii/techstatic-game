@@ -22,7 +22,7 @@ class MainMenu extends StatelessWidget {
                 'Whacky Warp',
                 style: TextStyle(
                   fontSize: 50.0,
-                  color: Color.fromARGB(255, 77, 77, 255),
+                  color: Color.fromARGB(255, 99, 40, 235),
                   shadows: [
                     Shadow(
                       blurRadius: 20.0,
@@ -50,7 +50,9 @@ class MainMenu extends StatelessWidget {
                 child: const Text('Play'),
               ),
             ),
-
+            const SizedBox(
+              height: 12,
+            ),
             // Settings button.
             SizedBox(
               width: MediaQuery.of(context).size.width / 3,
