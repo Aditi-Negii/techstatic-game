@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 import 'settings_menu.dart';
@@ -47,7 +49,7 @@ class MainMenu extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Play'),
+                child: const Text('Play', style: TextStyle(color: Colors.white),),
               ),
             ),
             const SizedBox(
@@ -64,9 +66,12 @@ class MainMenu extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Settings'),
+                child: const Text('Settings',  style: TextStyle(color: Colors.white),),
               ),
             ),
+            SizedBox(height: 70,),
+            Align(alignment: AlignmentDirectional.bottomCenter,
+            child: Text('Made By TheTechstatic Devs team')),
           ],
         ),
       ),

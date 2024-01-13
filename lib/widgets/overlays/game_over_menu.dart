@@ -15,6 +15,7 @@ class GameOverMenu extends StatelessWidget {
   final SpacescapeGame game;
   late int phoneNumber;
   TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
 
   GameOverMenu({super.key, required this.game});
 
@@ -44,7 +45,7 @@ class GameOverMenu extends StatelessWidget {
           ),
 
           SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
+            width: MediaQuery.of(context).size.width / 2,
             child: ElevatedButton(
               onPressed: () => showDialog<String>(
                 context: context,
@@ -53,25 +54,37 @@ class GameOverMenu extends StatelessWidget {
                   content: Text('Your Curent Score is $score'),
                   actions: <Widget>[
                     TextField(
+                      controller: nameController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Enter Your Full Name',
+                      ),
+                    ),
+                    SizedBox(height: 12,),
+                    TextField(
                       controller: phoneNumberController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Enter Phone Number',
                       ),
                     ),
-                    TextButton(
+                    SizedBox(height: 12,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        TextButton(
                       onPressed: () => Navigator.pop(context, 'Cancel'),
                       child: Text(
                         'Cancel',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
+                    
                     TextButton(
                       onPressed: () {
-                        clearField();
                         try {
                           print(phoneNumberController.text);
-                          post(phoneNumberController.text, score);
+                          post(phoneNumberController.text, score, nameController.text);
                           Navigator.pop(context, 'Submit');
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                               content: const Text(
@@ -82,8 +95,11 @@ class GameOverMenu extends StatelessWidget {
                                   "Please Enter A Valid Phone Number")));
                         }
                       },
-                      child: const Text('Submit'),
+                      child: const Text('Submit', style: TextStyle(color: Colors.white),),
                     ),
+                      ],
+                    ),
+                    
                   ],
                 ),
               ),
@@ -93,9 +109,10 @@ class GameOverMenu extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height: 12,),
           // Restart button.
           SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
+            width: MediaQuery.of(context).size.width / 2,
             child: ElevatedButton(
               onPressed: () {
                 game.overlays.remove(GameOverMenu.id);
@@ -109,10 +126,11 @@ class GameOverMenu extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height: 12,),
 
           // Exit button.
           SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
+            width: MediaQuery.of(context).size.width / 2,
             child: ElevatedButton(
               onPressed: () {
                 game.overlays.remove(GameOverMenu.id);
@@ -136,14 +154,14 @@ class GameOverMenu extends StatelessWidget {
     );
   }
 
-  void post(mobileNumber, score) {
+  void post(mobileNumber, score, name) {
     RegExp phoneNumberCheck = RegExp(
       r'^[0-9]{10}$',
     );
     String mobNo = mobileNumber;
     Match? match = phoneNumberCheck.firstMatch(mobNo);
     if (match != null) {
-      GoogleSheetsApi.insert(mobileNumber, score);
+      GoogleSheetsApi.insert(mobileNumber,score, name);
       return;
     }
 
