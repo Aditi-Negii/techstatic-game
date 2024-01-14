@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 import 'settings_menu.dart';
@@ -19,14 +21,14 @@ class MainMenu extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 50.0),
               child: Text(
-                'Spacescape',
+                'Whacky Warp',
                 style: TextStyle(
                   fontSize: 50.0,
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 99, 40, 235),
                   shadows: [
                     Shadow(
                       blurRadius: 20.0,
-                      color: Colors.white,
+                      color: Colors.purpleAccent,
                       offset: Offset(0, 0),
                     )
                   ],
@@ -47,10 +49,12 @@ class MainMenu extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Play'),
+                child: const Text('Play', style: TextStyle(color: Colors.white),),
               ),
             ),
-
+            const SizedBox(
+              height: 12,
+            ),
             // Settings button.
             SizedBox(
               width: MediaQuery.of(context).size.width / 3,
@@ -62,9 +66,12 @@ class MainMenu extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Settings'),
+                child: const Text('Settings',  style: TextStyle(color: Colors.white),),
               ),
             ),
+            SizedBox(height: 70,),
+            Align(alignment: AlignmentDirectional.bottomCenter,
+            child: Text('Made By The Techstatic Devs team')),
           ],
         ),
       ),

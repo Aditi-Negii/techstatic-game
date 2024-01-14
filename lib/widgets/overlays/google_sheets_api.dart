@@ -28,9 +28,9 @@ class GoogleSheetsApi{
     _workSheet = ss.worksheetByTitle('WorkSheet1');
   }
 
-  static Future insert(String mobileNumber, int score) async{
+  static Future insert(String mobileNumber, int score, String name) async{
     if(_workSheet==null )return;
-    await _workSheet!.values.appendRow([mobileNumber, score]);
+    await _workSheet!.values.appendRow([mobileNumber, score, name]);
   }
   
 

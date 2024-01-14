@@ -20,11 +20,11 @@ class SettingsMenu extends StatelessWidget {
                 'Settings',
                 style: TextStyle(
                   fontSize: 50.0,
-                  color: Colors.black,
+                  color: Colors.white,
                   shadows: [
                     Shadow(
                       blurRadius: 20.0,
-                      color: Colors.white,
+                      color: Colors.blueAccent,
                       offset: Offset(0, 0),
                     )
                   ],
@@ -37,7 +37,7 @@ class SettingsMenu extends StatelessWidget {
               selector: (context, settings) => settings.soundEffects,
               builder: (context, value, child) {
                 return SwitchListTile(
-                  title: const Text('Sound Effects'),
+                  title: const Text('Sound Effects', style: TextStyle(color: Colors.white),),
                   value: value,
                   onChanged: (newValue) {
                     Provider.of<Settings>(context, listen: false).soundEffects =
@@ -52,7 +52,7 @@ class SettingsMenu extends StatelessWidget {
               selector: (context, settings) => settings.backgroundMusic,
               builder: (context, value, child) {
                 return SwitchListTile(
-                  title: const Text('Background Music'),
+                  title: const Text('Background Music', style: TextStyle(color: Colors.white),),
                   value: value,
                   onChanged: (newValue) {
                     Provider.of<Settings>(context, listen: false)

@@ -27,11 +27,11 @@ class SelectSpaceship extends StatelessWidget {
                 'Select',
                 style: TextStyle(
                   fontSize: 50.0,
-                  color: Colors.black,
+                  color: Colors.white,
                   shadows: [
                     Shadow(
                       blurRadius: 20.0,
-                      color: Colors.white,
+                      color: Colors.blueAccent,
                       offset: Offset(0, 0),
                     )
                   ],
@@ -47,8 +47,8 @@ class SelectSpaceship extends StatelessWidget {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('Ship: ${spaceship.name}'),
-                    Text('Money: ${playerData.money}'),
+                    Text('Ship: ${spaceship.name}', style: const TextStyle(color: Colors.white)),
+                    Text('Money: ${playerData.money}', style: const TextStyle(color: Colors.white)),
                   ],
                 );
               },
@@ -66,10 +66,10 @@ class SelectSpaceship extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(spaceship.assetPath),
-                      Text(spaceship.name),
-                      Text('Speed: ${spaceship.speed}'),
-                      Text('Level: ${spaceship.level}'),
-                      Text('Cost: ${spaceship.cost}'),
+                      Text(spaceship.name, style: const TextStyle(color: Colors.white)),
+                      Text('Speed: ${spaceship.speed}', style: const TextStyle(color: Colors.white)),
+                      Text('Level: ${spaceship.level}', style: const TextStyle(color: Colors.white)),
+                      Text('Cost: ${spaceship.cost}', style: const TextStyle(color: Colors.white)),
                       Consumer<PlayerData>(
                         builder: (context, playerData, child) {
                           final type =
@@ -138,10 +138,13 @@ class SelectSpaceship extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('Start'),
+                child: const Text(
+                  'Start',
+                  style: TextStyle(color: Colors.white), 
+                ),
               ),
             ),
-
+            SizedBox(height: 13 ,),
             // Back button.
             SizedBox(
               width: MediaQuery.of(context).size.width / 3,
@@ -162,3 +165,4 @@ class SelectSpaceship extends StatelessWidget {
     );
   }
 }
+

@@ -208,7 +208,7 @@ class SpacescapeGame extends FlameGame
         textRenderer: TextPaint(
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 12,
+            fontSize: 13,
             fontFamily: 'BungeeInline',
           ),
         ),
@@ -221,7 +221,7 @@ class SpacescapeGame extends FlameGame
         textRenderer: TextPaint(
           style: const TextStyle(
             color: Colors.white,
-            fontSize: 12,
+            fontSize: 13,
             fontFamily: 'BungeeInline',
           ),
         ),
