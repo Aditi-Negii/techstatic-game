@@ -29,7 +29,7 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
 
   EnemyManager({required this.spriteSheet}) : super() {
     // Sets the timer to call _spawnEnemy() after every 1 second, until timer is explicitly stops.
-    _timer = Timer(0.5, onTick: _spawnEnemy, repeat: true);
+    _timer = Timer(0.3, onTick: _spawnEnemy, repeat: true);
 
     // Sets freeze time to 2 seconds. After 2 seconds spawn timer will start again.
     _freezeTimer = Timer(2, onTick: () {
@@ -84,9 +84,9 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
   int mapScoreToMaxEnemyLevel(int score) {
     int level = 1;
 
-    if (score > 600) {
+    if (score > 300) {
       level = 4;
-    } else if (score > 250) {
+    } else if (score > 200) {
       level = 3;
     } else if (score > 100) {
       level = 2;

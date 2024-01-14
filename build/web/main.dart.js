@@ -93162,7 +93162,7 @@ eP(){var s=this.eg$
 return s==null?this.lb():s}}
 A.nh.prototype={
 a6O(a){var s=this
-s.at=new A.hX(0.5,s.gaj7(),!0)
+s.at=new A.hX(0.3,s.gaj7(),!0)
 s.ax=new A.hX(2,new A.a7h(s),!1)},
 aj8(){var s,r,q,p,o,n,m,l,k=this,j=new A.X(new Float64Array(2))
 j.aS(64,64)
@@ -93177,8 +93177,8 @@ if((r==null?null:r.R)!=null){r=k.gc0().hM$
 r=r==null?null:r.R
 r.toString
 o=A.ku(r,!1,t.Kd).e
-if(o>600)n=4
-else if(o>250)n=3
+if(o>300)n=4
+else if(o>200)n=3
 else n=o>100?2:1
 m=B.Gr[s.rB(n*4)]
 l=A.aPs(m,p,j,k.ay.tf(m.b))
