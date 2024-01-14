@@ -1,89 +1,96 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:card_actions/card_action_button.dart';
 import 'package:flutter/material.dart';
-import 'package:card_actions/card_actions.dart';
 
-class GameIntroScreen extends StatefulWidget {
-  GameIntroScreen({super.key});
+class GameIntroScreen extends StatelessWidget {
+  const GameIntroScreen({super.key});
 
-  @override
-  State<GameIntroScreen> createState() => _GameIntroScreenState();
-}
-
-class _GameIntroScreenState extends State<GameIntroScreen> {
-  final List<String> images = [
-    "assets/images/ship_A.png",
-    "assets/images/ship_B.png",
-    "assets/images/ship_C.png",
-    "assets/images/ship_D.png",
-    "assets/images/ship_E.png",
-  ];
-
-  final List<String> texts = [
-    "Use Joystick to move the player around",
-    "Use Joystick to move the player around",
-    "Use Joystick to move the player around",
-    "Use Joystick to move the player around",
-    "Use Joystick to move the player around",
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('How to Play'),
         backgroundColor: Colors.transparent,
-        title: Text('Game Guide'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return Container(
-              padding: EdgeInsets.all(16),
-              child: buildCard(
-                context,
-                image: images[index],
-                text: texts[index],
+      body:ListView(
+        children: <Widget>[
+          SizedBox(height: 20,),
+          Column(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.purple[200],
+                      ),
+                height: 150,
+                width: 500,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        children: <Widget>[
+                          Text("How to Move: ", style: TextStyle(fontSize: 20),),
+                          Text('In order to move, use the joystick on the bottom left of the screen',  style: TextStyle(fontSize: 20), 
+                           ), Text('Get GUD', style: TextStyle(color: Colors.black),)],
+                      ),
+                    )
+                  ],
+                ),
               ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget buildCard(BuildContext context,
-      {required String image, required String text}) {
-    return Card(
-      color: const Color(0xff7a306c),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      elevation: 4,
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-            ),
-            child: Image.asset(
-              image,
-              height: 250,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Text(
-            text,
-            textAlign: TextAlign.center,
-          ),
+              SizedBox(height: 30,),
+              Container(
+                decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.purple[200],
+                      ),
+                height: 180,
+                width: 500,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      padding: EdgeInsets.all(20),
+                      child: Column( 
+                      
+                        children: <Widget>[
+                          Text("How to Shoot: ", style: TextStyle(fontSize: 20),),
+                          Text('In order to shoot the astroids, press the button on the bottom right of the screen', style: TextStyle(fontSize: 20),),
+                          Text('DUHH', style: TextStyle(color: Colors.black),)
+                          ],
+                      ),
+                    )
+                  ],
+                )
+              ),
+              SizedBox(height: 30,),
+              Container(
+                decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.purple[200],
+                      ),
+                height: 190,
+                width: 500,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        children: <Widget>[
+                          Text("Think you are the exception: ", style: TextStyle(fontSize: 20),),
+                          Text('Submit your high score at the end of the game to stand a chance to win free techstatic merch!!', style: TextStyle(fontSize: 20),), 
+                          Text('NAH Id WIN', style: TextStyle(color: Colors.black), )],
+                      ),
+                    )
+                  ],
+                )
+              ),
+            ],
+          )
         ],
-      ),
+      )
     );
   }
 }

@@ -15,6 +15,10 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Image.asset('assets/images/techstatic_logo.png'),
+        backgroundColor: Colors.transparent,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,9 +34,9 @@ class MainMenu extends StatelessWidget {
                   color: Colors.white,
                   shadows: [
                     Shadow(
-                      blurRadius: 1000000,
+                      blurRadius: 10,
                       color: Colors.blueAccent,
-                      offset: Offset(0, 0),
+                      offset: Offset(3, 3),
                     )
                   ],
                 ),
@@ -47,9 +51,9 @@ class MainMenu extends StatelessWidget {
                   color: Colors.white,
                   shadows: [
                     Shadow(
-                      blurRadius: 10000000,
+                      blurRadius: 10,
                       color: Colors.blueAccent,
-                      offset: Offset(00, 0),
+                      offset: Offset(03, 3),
                     )
                   ],
                 ),
@@ -124,8 +128,20 @@ class MainMenu extends StatelessWidget {
                 alignment: AlignmentDirectional.bottomCenter,
                 child: Column(
                   children: <Widget>[
-                    Text('Made by'),
-                    Text('The Techstatic Creatives and Devs Teams')
+                    Text('Made by', style: TextStyle(shadows: [
+                    Shadow(
+                      blurRadius: 10,
+                      color: Colors.blueAccent,
+                      offset: Offset(03, 3),
+                    )
+                  ],),),
+                    Text('The Techstatic Creatives and Devs Teams', style: TextStyle(shadows: [
+                    Shadow(
+                      blurRadius: 10,
+                      color: Colors.blueAccent,
+                      offset: Offset(03, 3),
+                    )
+                  ],),)
                   ],)
                 ),
           ],

@@ -35,6 +35,8 @@ flutter:
     - assets/images/
     - assets/audio/
     - assets/audio/background_music.wav
+    - assets/images/techstatic_logo.png
+    
   fonts:
     - family: BungeeInline
       fonts:
