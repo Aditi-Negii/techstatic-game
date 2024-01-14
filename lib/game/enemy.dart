@@ -97,7 +97,7 @@ class Enemy extends SpriteComponent
     final shape = CircleHitbox.relative(
       0.8,
       parentSize: size,
-      position: size / 1.5,
+      position: size / 2,
       anchor: Anchor.center,
     );
     add(shape);

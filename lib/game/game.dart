@@ -118,7 +118,7 @@ class SpacescapeGame extends FlameGame
       final backgroundPaint = Paint()..color = Colors.white.withOpacity(0.5);
       joystick = JoystickComponent(
         knob: CircleComponent(radius: 25, paint: knobPaint),
-        background: CircleComponent(radius: 70, paint: backgroundPaint),
+        background: CircleComponent(radius: 60, paint: backgroundPaint),
         margin: const EdgeInsets.only(left: 40, bottom: 20),
       );
 

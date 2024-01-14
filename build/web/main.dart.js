@@ -93096,7 +93096,7 @@ r.W=q.U(0,s).Zc()}},
 dL(){var s,r,q,p=this
 p.yh()
 s=p.ax
-p.es(A.a3S(0.8,B.K,s,s.cd(0,1.5)))
+p.es(A.a3S(0.8,B.K,s,s.cd(0,2)))
 s=p.an
 r=s.at
 r.c=3.141592653589793
@@ -93239,7 +93239,7 @@ k=p.aT()
 j=B.c.bi(127.5)
 k.sap(0,A.U(j,255,255,255))
 i=A.ay8(l,25)
-h=A.ay8(k,70)
+h=A.ay8(k,60)
 g=new Float64Array(2)
 f=new Float64Array(2)
 e=h.ax
