@@ -18,18 +18,37 @@ class MainMenu extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Game title.
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 50.0),
+
+
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
               child: Text(
-                'Whacky Warp',
+                'Stardust',
                 style: TextStyle(
                   fontSize: 50.0,
-                  color: Color.fromARGB(255, 99, 40, 235),
+                  color: Colors.white,
                   shadows: [
                     Shadow(
-                      blurRadius: 20.0,
-                      color: Colors.purpleAccent,
+                      blurRadius: 100000,
+                      color: Colors.blueAccent,
                       offset: Offset(0, 0),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 3, 0, 50),
+              child: Text(
+                'Crusaders',
+                style: TextStyle(
+                  fontSize: 50.0,
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 10000000,
+                      color: Colors.blueAccent,
+                      offset: Offset(00, 0),
                     )
                   ],
                 ),

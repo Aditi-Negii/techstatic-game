@@ -45,7 +45,7 @@ class Spaceship {
   /// This map holds all the meta-data of each [SpaceshipType].
   static const Map<SpaceshipType, Spaceship> spaceships = {
     SpaceshipType.canary: Spaceship(
-      name: 'Canary',
+      name: 'Binary Blitz',
       cost: 0,
       speed: 250,
       spriteId: 0,
@@ -53,7 +53,7 @@ class Spaceship {
       level: 1,
     ),
     SpaceshipType.dusky: Spaceship(
-      name: 'Dusky',
+      name: 'Skewness Skylark',
       cost: 100,
       speed: 400,
       spriteId: 1,
@@ -61,7 +61,7 @@ class Spaceship {
       level: 2,
     ),
     SpaceshipType.condor: Spaceship(
-      name: 'Condor',
+      name: 'Variance Voyager',
       cost: 200,
       speed: 300,
       spriteId: 2,
@@ -69,7 +69,7 @@ class Spaceship {
       level: 2,
     ),
     SpaceshipType.cXC: Spaceship(
-      name: 'CXC',
+      name: 'Kurtosis Cosmos Craft',
       cost: 400,
       speed: 300,
       spriteId: 3,
@@ -77,7 +77,7 @@ class Spaceship {
       level: 3,
     ),
     SpaceshipType.raptor: Spaceship(
-      name: 'Raptor',
+      name: '404 Cruiser',
       cost: 550,
       speed: 300,
       spriteId: 4,
@@ -85,7 +85,7 @@ class Spaceship {
       level: 3,
     ),
     SpaceshipType.raptorX: Spaceship(
-      name: 'Raptor-X',
+      name: 'Cyber Constellation',
       cost: 700,
       speed: 350,
       spriteId: 5,
@@ -93,19 +93,11 @@ class Spaceship {
       level: 3,
     ),
     SpaceshipType.albatross: Spaceship(
-      name: 'Albatross',
+      name: 'BugHunter',
       cost: 850,
       speed: 400,
       spriteId: 6,
       assetPath: 'assets/images/ship_G.png',
-      level: 4,
-    ),
-    SpaceshipType.dK809: Spaceship(
-      name: 'DK-809',
-      cost: 1000,
-      speed: 450,
-      spriteId: 7,
-      assetPath: 'assets/images/ship_H.png',
       level: 4,
     ),
   };
