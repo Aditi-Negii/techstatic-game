@@ -15,10 +15,6 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Image.asset('assets/images/techstatic_logo.png'),
-        backgroundColor: Colors.transparent,
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -141,8 +137,15 @@ class MainMenu extends StatelessWidget {
                       color: Colors.blueAccent,
                       offset: Offset(03, 3),
                     )
-                  ],),)
-                  ],)
+                  ],
+                  )
+                  ,
+                  ),
+                  SizedBox(height: 15,),
+                  Center(child: SizedBox(height: 100, width: 100 ,child: Image.asset('assets/images/techstatic_logo.png'),),)
+                  ],
+
+                  )
                 ),
           ],
         ),
