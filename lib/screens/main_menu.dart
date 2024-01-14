@@ -72,7 +72,7 @@ class MainMenu extends StatelessWidget {
                 },
                 child: const Text(
                   'Play',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white,  fontSize: 12),
                 ),
               ),
             ),
@@ -91,8 +91,8 @@ class MainMenu extends StatelessWidget {
                   );
                 },
                 child: const Text(
-                  'Game Guide',
-                  style: TextStyle(color: Colors.white),
+                  'Guide',
+                  style: TextStyle(color: Colors.white, fontSize: 12),
                 ),
               ),
             ),
@@ -113,7 +113,7 @@ class MainMenu extends StatelessWidget {
                 },
                 child: const Text(
                   'Settings',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white,  fontSize: 12),
                 ),
               ),
             ),

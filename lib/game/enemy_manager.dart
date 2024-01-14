@@ -84,9 +84,9 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
   int mapScoreToMaxEnemyLevel(int score) {
     int level = 1;
 
-    if (score > 1000) {
+    if (score > 750) {
       level = 4;
-    } else if (score > 300) {
+    } else if (score > 250) {
       level = 3;
     } else if (score > 100) {
       level = 2;
