@@ -84,9 +84,9 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
   int mapScoreToMaxEnemyLevel(int score) {
     int level = 1;
 
-    if (score > 1500) {
+    if (score > 1000) {
       level = 4;
-    } else if (score > 500) {
+    } else if (score > 300) {
       level = 3;
     } else if (score > 100) {
       level = 2;
@@ -150,70 +150,70 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
       hMove: false,
     ),
     EnemyData(
-      killPoint: 10,
+      killPoint: 5,
       speed: 200,
       spriteId: 10,
       level: 1,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 10,
+      killPoint: 5,
       speed: 200,
       spriteId: 11,
       level: 1,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 20,
+      killPoint: 10,
       speed: 250,
       spriteId: 12,
       level: 2,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 20,
+      killPoint: 10,
       speed: 250,
       spriteId: 13,
       level: 2,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 30,
+      killPoint: 10,
       speed: 250,
       spriteId: 14,
       level: 2,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 30,
+      killPoint: 10,
       speed: 250,
       spriteId: 15,
       level: 2,
       hMove: true,
     ),
     EnemyData(
-      killPoint: 30,
+      killPoint: 10,
       speed: 350,
       spriteId: 16,
       level: 3,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 40,
+      killPoint: 20,
       speed: 350,
       spriteId: 17,
       level: 3,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 30,
+      killPoint: 20,
       speed: 400,
       spriteId: 18,
       level: 3,
       hMove: true,
     ),
     EnemyData(
-      killPoint: 30,
+      killPoint: 20,
       speed: 400,
       spriteId: 19,
       level: 3,
@@ -227,21 +227,21 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
       hMove: false,
     ),
     EnemyData(
-      killPoint: 50,
+      killPoint: 30,
       speed: 250,
       spriteId: 21,
       level: 4,
       hMove: true,
     ),
     EnemyData(
-      killPoint: 50,
+      killPoint: 30,
       speed: 250,
       spriteId: 22,
       level: 4,
       hMove: false,
     ),
     EnemyData(
-      killPoint: 50,
+      killPoint: 30,
       speed: 250,
       spriteId: 23,
       level: 4,
