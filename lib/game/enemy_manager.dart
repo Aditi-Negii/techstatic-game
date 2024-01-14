@@ -143,7 +143,7 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
       hMove: false,
     ),
     EnemyData(
-      killPoint: 5,
+      killPoint: 6,
       speed: 200,
       spriteId: 9,
       level: 1,
@@ -157,7 +157,7 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
       hMove: false,
     ),
     EnemyData(
-      killPoint: 5,
+      killPoint: 4,
       speed: 200,
       spriteId: 11,
       level: 1,
@@ -241,7 +241,7 @@ class EnemyManager extends Component with HasGameReference<SpacescapeGame> {
       hMove: false,
     ),
     EnemyData(
-      killPoint: 30,
+      killPoint: 31,
       speed: 250,
       spriteId: 23,
       level: 4,
