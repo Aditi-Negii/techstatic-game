@@ -93177,7 +93177,7 @@ if((r==null?null:r.R)!=null){r=k.gc0().hM$
 r=r==null?null:r.R
 r.toString
 o=A.ku(r,!1,t.Kd).e
-if(o>750)n=4
+if(o>600)n=4
 else if(o>250)n=3
 else n=o>100?2:1
 m=B.Gr[s.rB(n*4)]
@@ -100559,7 +100559,7 @@ $.aFb=A.aP("nukeSprite")
 $.aF9=A.aP("healthSprite")
 $.aF8=A.aP("freezeSprite")
 $.aFa=A.aP("multiFireSprite")
-$.aF4=A.av(["currentSpaceshipType",B.cQ,"ownedSpaceshipTypes",A.b([B.cQ],A.a4("x<fK>")),"highScore",0,"money",1e7],t.N,t.z)
+$.aF4=A.av(["currentSpaceshipType",B.cQ,"ownedSpaceshipTypes",A.b([B.cQ],A.a4("x<fK>")),"highScore",0,"money",0],t.N,t.z)
 $.ayM=A.aP("score")
 $.aDY=null})();(function lazyInitializers(){var s=hunkHelpers.lazyFinal,r=hunkHelpers.lazy
 s($,"b1J","cr",()=>{var q="navigator"
