@@ -72,7 +72,7 @@ class PlayerData extends ChangeNotifier with HiveObjectMixin {
     'currentSpaceshipType': SpaceshipType.canary,
     'ownedSpaceshipTypes': [SpaceshipType.canary],
     'highScore': 0,
-    'money': 0,
+    'money': 10000000,
   };
 
   /// Returns true if given [SpaceshipType] is owned by player.

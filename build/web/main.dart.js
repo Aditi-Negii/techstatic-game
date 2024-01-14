@@ -100559,7 +100559,7 @@ $.aFb=A.aP("nukeSprite")
 $.aF9=A.aP("healthSprite")
 $.aF8=A.aP("freezeSprite")
 $.aFa=A.aP("multiFireSprite")
-$.aF4=A.av(["currentSpaceshipType",B.cQ,"ownedSpaceshipTypes",A.b([B.cQ],A.a4("x<fK>")),"highScore",0,"money",0],t.N,t.z)
+$.aF4=A.av(["currentSpaceshipType",B.cQ,"ownedSpaceshipTypes",A.b([B.cQ],A.a4("x<fK>")),"highScore",0,"money",1e7],t.N,t.z)
 $.ayM=A.aP("score")
 $.aDY=null})();(function lazyInitializers(){var s=hunkHelpers.lazyFinal,r=hunkHelpers.lazy
 s($,"b1J","cr",()=>{var q="navigator"
