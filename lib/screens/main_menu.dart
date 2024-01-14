@@ -71,7 +71,7 @@ class MainMenu extends StatelessWidget {
             ),
             SizedBox(height: 70,),
             Align(alignment: AlignmentDirectional.bottomCenter,
-            child: Text('Made By TheTechstatic Devs team')),
+            child: Text('Made By The Techstatic Devs team')),
           ],
         ),
       ),
