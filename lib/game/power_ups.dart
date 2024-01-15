@@ -112,7 +112,7 @@ class Health extends PowerUp {
   void onActivated() {
     // Register a command to increase player health.
     final command = Command<Player>(action: (player) {
-      player.increaseHealthBy(10);
+      player.increaseHealthBy(30);
     });
     game.addCommand(command);
   }

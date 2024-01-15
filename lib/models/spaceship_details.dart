@@ -54,7 +54,7 @@ class Spaceship {
     ),
     SpaceshipType.dusky: Spaceship(
       name: 'Skewness Skylark',
-      cost: 5000,
+      cost: 7000,
       speed: 400,
       spriteId: 1,
       assetPath: 'assets/images/ship_B.png',
@@ -62,7 +62,7 @@ class Spaceship {
     ),
     SpaceshipType.condor: Spaceship(
       name: 'Variance Voyager',
-      cost: 7000,
+      cost: 15000,
       speed: 300,
       spriteId: 2,
       assetPath: 'assets/images/ship_C.png',
@@ -70,7 +70,7 @@ class Spaceship {
     ),
     SpaceshipType.cXC: Spaceship(
       name: 'Kurtosis Cosmos Craft',
-      cost: 10000,
+      cost: 25000,
       speed: 300,
       spriteId: 3,
       assetPath: 'assets/images/ship_D.png',
@@ -78,7 +78,7 @@ class Spaceship {
     ),
     SpaceshipType.raptor: Spaceship(
       name: '404 Cruiser',
-      cost: 13000,
+      cost: 34000,
       speed: 300,
       spriteId: 4,
       assetPath: 'assets/images/ship_E.png',
@@ -86,7 +86,7 @@ class Spaceship {
     ),
     SpaceshipType.raptorX: Spaceship(
       name: 'Cyber Constellation',
-      cost: 17000,
+      cost: 40000,
       speed: 450,
       spriteId: 5,
       assetPath: 'assets/images/ship_F.png',
@@ -94,7 +94,7 @@ class Spaceship {
     ),
     SpaceshipType.albatross: Spaceship(
       name: 'BugHunter',
-      cost: 20000,
+      cost: 50000,
       speed: 600,
       spriteId: 6,
       assetPath: 'assets/images/ship_G.png',

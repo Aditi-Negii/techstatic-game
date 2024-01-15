@@ -18,7 +18,7 @@ import '../models/enemy_data.dart';
 class Enemy extends SpriteComponent
     with CollisionCallbacks, HasGameReference<SpacescapeGame> {
   // The speed of this enemy.
-  double _speed = 250;
+  double _speed = 300;
 
   // This direction in which this Enemy will move.
   // Defaults to vertically downwards.
@@ -78,7 +78,7 @@ class Enemy extends SpriteComponent
     _hpText.text = '$_hitPoints HP';
 
     // Sets freeze time to 2 seconds. After 2 seconds speed will be reset.
-    _freezeTimer = Timer(2, onTick: () {
+    _freezeTimer = Timer(1.5, onTick: () {
       _speed = enemyData.speed;
     });
 
