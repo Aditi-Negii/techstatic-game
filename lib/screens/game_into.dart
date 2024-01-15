@@ -22,16 +22,16 @@ class GameIntroScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.purple[200],
                       ),
-                height: 150,
-                width: 500,
+                height: 210,
+                width: 450,
                 child: Column(
                   children: <Widget>[
                     Container(
                       padding: EdgeInsets.all(20),
                       child: Column(
                         children: <Widget>[
-                          Text("How to Move: ", style: TextStyle(fontSize: 20),),
-                          Text('In order to move, use the joystick on the bottom left of the screen',  style: TextStyle(fontSize: 20), 
+                          Text("To Move and Shoot ", style: TextStyle(fontSize: 20),),
+                          Text('In order to move, use the joystick on the bottom left of the screen and to shoot press the button on the right',  style: TextStyle(fontSize: 20), 
                            ), Text('Get GUD', style: TextStyle(color: Colors.black),)],
                       ),
                     )
@@ -44,8 +44,8 @@ class GameIntroScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.purple[200],
                       ),
-                height: 180,
-                width: 500,
+                height: 210,
+                width: 450,
                 child: Column(
                   children: <Widget>[
                     Container(
@@ -56,9 +56,9 @@ class GameIntroScreen extends StatelessWidget {
                       child: Column( 
                       
                         children: <Widget>[
-                          Text("How to Shoot: ", style: TextStyle(fontSize: 20),),
-                          Text('In order to shoot the astroids, press the button on the bottom right of the screen', style: TextStyle(fontSize: 20),),
-                          Text('DUHH', style: TextStyle(color: Colors.black),)
+                          Text("Collect New Ships: ", style: TextStyle(fontSize: 20),),
+                          Text('Destroy asteroids and earn coins to buy new Spaceships in the select ship screen. Higher the price, Higher the performace', style: TextStyle(fontSize: 20),),
+                          Text('Speed.... I am SPEED', style: TextStyle(color: Colors.black),)
                           ],
                       ),
                     )
@@ -72,7 +72,7 @@ class GameIntroScreen extends StatelessWidget {
                         color: Colors.purple[200],
                       ),
                 height: 190,
-                width: 500,
+                width: 450,
                 child: Column(
                   children: <Widget>[
                     Container(

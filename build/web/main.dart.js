@@ -93889,14 +93889,14 @@ return s},
 grX(){return 1}}
 A.uh.prototype={
 L(a){var s,r,q,p,o=null,n=A.cd(o,20,o),m=A.yn(20),l=t.D
-m=A.hC(o,A.eZ(A.b([A.hC(o,A.eZ(A.b([A.cp("How to Move: ",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("In order to move, use the joystick on the bottom left of the screen",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("Get GUD",o,o,o,A.d9(o,o,B.l,o,o,o,o,o,o,o,o,o,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o)],l),B.ag,B.aV,B.aq),B.w,o,o,o,o,new A.aB(20,20,20,20),o)],l),B.ag,B.aV,B.aq),B.w,o,new A.dz(B.iF,o,o,m,o,o,B.b3),150,o,o,500)
+m=A.hC(o,A.eZ(A.b([A.hC(o,A.eZ(A.b([A.cp("To Move and Shoot ",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("In order to move, use the joystick on the bottom left of the screen and to shoot press the button on the right",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("Get GUD",o,o,o,A.d9(o,o,B.l,o,o,o,o,o,o,o,o,o,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o)],l),B.ag,B.aV,B.aq),B.w,o,o,o,o,new A.aB(20,20,20,20),o)],l),B.ag,B.aV,B.aq),B.w,o,new A.dz(B.iF,o,o,m,o,o,B.b3),210,o,o,450)
 s=A.cd(o,30,o)
 r=A.yn(20)
 q=A.yn(20)
-r=A.hC(o,A.eZ(A.b([A.hC(o,A.eZ(A.b([A.cp("How to Shoot: ",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("In order to shoot the astroids, press the button on the bottom right of the screen",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("DUHH",o,o,o,A.d9(o,o,B.l,o,o,o,o,o,o,o,o,o,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o)],l),B.ag,B.aV,B.aq),B.w,o,new A.dz(o,o,o,q,o,o,B.b3),o,o,new A.aB(20,20,20,20),o)],l),B.ag,B.aV,B.aq),B.w,o,new A.dz(B.iF,o,o,r,o,o,B.b3),180,o,o,500)
+r=A.hC(o,A.eZ(A.b([A.hC(o,A.eZ(A.b([A.cp("Collect New Ships: ",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("Destroy asteroids and earn coins to buy new Spaceships in the select ship screen. Higher the price, Higher the performace",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("Speed.... I am SPEED",o,o,o,A.d9(o,o,B.l,o,o,o,o,o,o,o,o,o,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o)],l),B.ag,B.aV,B.aq),B.w,o,new A.dz(o,o,o,q,o,o,B.b3),o,o,new A.aB(20,20,20,20),o)],l),B.ag,B.aV,B.aq),B.w,o,new A.dz(B.iF,o,o,r,o,o,B.b3),210,o,o,450)
 q=A.cd(o,30,o)
 p=A.yn(20)
-l=A.b([n,A.eZ(A.b([m,s,r,q,A.hC(o,A.eZ(A.b([A.hC(o,A.eZ(A.b([A.cp("Think you are the exception: ",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("Submit your high score at the end of the game to stand a chance to win free techstatic merch!!",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("NAH Id WIN",o,o,o,A.d9(o,o,B.l,o,o,o,o,o,o,o,o,o,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o)],l),B.ag,B.aV,B.aq),B.w,o,o,o,o,new A.aB(20,20,20,20),o)],l),B.ag,B.aV,B.aq),B.w,o,new A.dz(B.iF,o,o,p,o,o,B.b3),190,o,o,500)],l),B.ag,B.aV,B.aq)],l)
+l=A.b([n,A.eZ(A.b([m,s,r,q,A.hC(o,A.eZ(A.b([A.hC(o,A.eZ(A.b([A.cp("Think you are the exception: ",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("Submit your high score at the end of the game to stand a chance to win free techstatic merch!!",o,o,o,A.d9(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o),A.cp("NAH Id WIN",o,o,o,A.d9(o,o,B.l,o,o,o,o,o,o,o,o,o,o,o,o,o,o,!0,o,o,o,o,o,o,o,o),o,o)],l),B.ag,B.aV,B.aq),B.w,o,o,o,o,new A.aB(20,20,20,20),o)],l),B.ag,B.aV,B.aq),B.w,o,new A.dz(B.iF,o,o,p,o,o,B.b3),190,o,o,450)],l),B.ag,B.aV,B.aq)],l)
 p=A.av([null,0],t.LO,t.S)
 n=!0
 n=n?B.zT:o
