@@ -124,14 +124,18 @@ class MainMenu extends StatelessWidget {
                 alignment: AlignmentDirectional.bottomCenter,
                 child: Column(
                   children: <Widget>[
-                    Text('Made by', style: TextStyle(shadows: [
+                    Text('Made by', style: TextStyle(
+                      fontSize: 12,
+                      shadows: [
                     Shadow(
                       blurRadius: 10,
                       color: Colors.blueAccent,
                       offset: Offset(03, 3),
                     )
                   ],),),
-                    Text('The Techstatic Creatives and Devs Teams', style: TextStyle(shadows: [
+                    Text('The Techstatic Creatives and Devs Teams', style: TextStyle(
+                      fontSize: 12,
+                      shadows: [
                     Shadow(
                       blurRadius: 10,
                       color: Colors.blueAccent,
