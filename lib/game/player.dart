@@ -136,46 +136,46 @@ class Player extends SpriteComponent
     return _playerScoreStore;
   }
 
-  // Vector2 keyboardDelta = Vector2.zero();
-  // static final _keysWatched = {
-  //   LogicalKeyboardKey.keyW,
-  //   LogicalKeyboardKey.keyA,
-  //   LogicalKeyboardKey.keyS,
-  //   LogicalKeyboardKey.keyD,
-  //   LogicalKeyboardKey.space,
-  // };
+  Vector2 keyboardDelta = Vector2.zero();
+  static final _keysWatched = {
+    LogicalKeyboardKey.keyW,
+    LogicalKeyboardKey.keyA,
+    LogicalKeyboardKey.keyS,
+    LogicalKeyboardKey.keyD,
+    LogicalKeyboardKey.space,
+  };
 
-  // @override
-  // bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
-  //   // Set this to zero first - if the user releases all keys pressed, then
-  //   // the set will be empty and our vector non-zero.
-  //   keyboardDelta.setZero();
+  @override
+  bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+    // Set this to zero first - if the user releases all keys pressed, then
+    // the set will be empty and our vector non-zero.
+    keyboardDelta.setZero();
 
-  //   if (!_keysWatched.contains(event.logicalKey)) return true;
+    if (!_keysWatched.contains(event.logicalKey)) return true;
 
-  //   if (event is RawKeyDownEvent &&
-  //       !event.repeat &&
-  //       event.logicalKey == LogicalKeyboardKey.space) {
-  //     // pew pew!
-  //     joystickAction();
-  //   }
+    if (event is RawKeyDownEvent &&
+        !event.repeat &&
+        event.logicalKey == LogicalKeyboardKey.space) {
+      // pew pew!
+      joystickAction();
+    }
 
-  //   if (keysPressed.contains(LogicalKeyboardKey.keyW)) {
-  //     keyboardDelta.y = -1;
-  //   }
-  //   if (keysPressed.contains(LogicalKeyboardKey.keyA)) {
-  //     keyboardDelta.x = -1;
-  //   }
-  //   if (keysPressed.contains(LogicalKeyboardKey.keyS)) {
-  //     keyboardDelta.y = 1;
-  //   }
-  //   if (keysPressed.contains(LogicalKeyboardKey.keyD)) {
-  //     keyboardDelta.x = 1;
-  //   }
+    if (keysPressed.contains(LogicalKeyboardKey.keyW)) {
+      keyboardDelta.y = -1;
+    }
+    if (keysPressed.contains(LogicalKeyboardKey.keyA)) {
+      keyboardDelta.x = -1;
+    }
+    if (keysPressed.contains(LogicalKeyboardKey.keyS)) {
+      keyboardDelta.y = 1;
+    }
+    if (keysPressed.contains(LogicalKeyboardKey.keyD)) {
+      keyboardDelta.x = 1;
+    }
 
-  //   // Handled keyboard input
-  //   return false;
-  // }
+    // Handled keyboard input
+    return false;
+  }
 
   // This method is called by game class for every frame.
   @override
@@ -192,9 +192,9 @@ class Player extends SpriteComponent
       position.add(joystick.relativeDelta * _spaceship.speed * dt);
     }
 
-    // if (!keyboardDelta.isZero()) {
-    //   position.add(keyboardDelta * _spaceship.speed * dt);
-    // }
+    if (!keyboardDelta.isZero()) {
+      position.add(keyboardDelta * _spaceship.speed * dt);
+    }
 
     // Clamp position of player such that the player sprite does not go outside the screen size.
     position.clamp(
