@@ -93162,7 +93162,7 @@ eP(){var s=this.eg$
 return s==null?this.lb():s}}
 A.nh.prototype={
 a6O(a){var s=this
-s.at=new A.hX(0.7,s.gaj7(),!0)
+s.at=new A.hX(0.5,s.gaj7(),!0)
 s.ax=new A.hX(2,new A.a7h(s),!1)},
 aj8(){var s,r,q,p,o,n,m,l,k=this,j=new A.X(new Float64Array(2))
 j.aS(64,64)
