@@ -18,7 +18,7 @@ import '../models/enemy_data.dart';
 class Enemy extends SpriteComponent
     with CollisionCallbacks, HasGameReference<SpacescapeGame> {
   // The speed of this enemy.
-  double _speed = 300;
+  double _speed = 250;
 
   // This direction in which this Enemy will move.
   // Defaults to vertically downwards.

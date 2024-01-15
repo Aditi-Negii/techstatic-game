@@ -27844,7 +27844,7 @@ m.nZ(n,n,n,n,n,0,n,b,n,n,c,d)
 m.a6N(a,b,c,d)
 return m},
 k7:function k7(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,a0,a1){var _=this
-_.R=300
+_.R=250
 _.W=a
 _.a8=$
 _.aj=b
@@ -93162,7 +93162,7 @@ eP(){var s=this.eg$
 return s==null?this.lb():s}}
 A.nh.prototype={
 a6O(a){var s=this
-s.at=new A.hX(0.3,s.gaj7(),!0)
+s.at=new A.hX(0.7,s.gaj7(),!0)
 s.ax=new A.hX(2,new A.a7h(s),!1)},
 aj8(){var s,r,q,p,o,n,m,l,k=this,j=new A.X(new Float64Array(2))
 j.aS(64,64)
@@ -93180,7 +93180,7 @@ o=A.ku(r,!1,t.Kd).e
 if(o>300)n=4
 else if(o>200)n=3
 else n=o>100?2:1
-m=B.Gr[s.rB(n*7)]
+m=B.Gr[s.rB(n*4)]
 l=A.aPs(m,p,j,k.ay.tf(m.b))
 l.ay=B.K
 l.lp()
@@ -99228,13 +99228,13 @@ B.yW=new A.fK(4,"raptor")
 B.yX=new A.fK(5,"raptorX")
 B.yY=new A.fK(6,"albatross")
 B.NB=new A.kD("Binary Blitz",0,250,0,"assets/images/ship_A.png",1)
-B.NC=new A.kD("Skewness Skylark",7000,400,1,"assets/images/ship_B.png",2)
-B.Nz=new A.kD("Variance Voyager",15e3,300,2,"assets/images/ship_C.png",2)
-B.Nx=new A.kD("Kurtosis Cosmos Craft",25e3,300,3,"assets/images/ship_D.png",3)
-B.Ny=new A.kD("404 Cruiser",34e3,300,4,"assets/images/ship_E.png",3)
-B.ND=new A.kD("Cyber Constellation",4e4,450,5,"assets/images/ship_F.png",3)
-B.NA=new A.kD("BugHunter",5e4,600,6,"assets/images/ship_G.png",4)
-B.cJ=new A.cW([B.cQ,B.NB,B.yT,B.NC,B.yU,B.Nz,B.yV,B.Nx,B.yW,B.Ny,B.yX,B.ND,B.yY,B.NA],A.a4("cW<fK,kD>"))
+B.Nx=new A.kD("Skewness Skylark",5000,400,1,"assets/images/ship_B.png",2)
+B.Nz=new A.kD("Variance Voyager",1e4,300,2,"assets/images/ship_C.png",2)
+B.NA=new A.kD("Kurtosis Cosmos Craft",13e3,300,3,"assets/images/ship_D.png",3)
+B.Ny=new A.kD("404 Cruiser",17e3,300,4,"assets/images/ship_E.png",3)
+B.ND=new A.kD("Cyber Constellation",2e4,450,5,"assets/images/ship_F.png",3)
+B.NC=new A.kD("BugHunter",25e3,600,6,"assets/images/ship_G.png",4)
+B.cJ=new A.cW([B.cQ,B.NB,B.yT,B.Nx,B.yU,B.Nz,B.yV,B.NA,B.yW,B.Ny,B.yX,B.ND,B.yY,B.NC],A.a4("cW<fK,kD>"))
 B.em=new A.nQ(0,"canvas")
 B.en=new A.nQ(1,"card")
 B.Jy=new A.nQ(2,"circle")
