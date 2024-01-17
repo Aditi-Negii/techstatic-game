@@ -34,9 +34,9 @@ class GoogleSheetsApi{
     await _workSheet!.values.appendRow([mobileNumber, score, name]);
   }
 
-  // static Future loadScore() async {
-  //   if(_workSheet ==null )return;
-  //   final String value = await _workSheet!
-  // }
+  static Future<String> fetch()async{
+    String highScore = await _workSheet!.values.value(column: 9, row:1);
+    return highScore;
+  }
 
 }

@@ -17,6 +17,15 @@ class GameOverMenu extends StatelessWidget {
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController nameController = TextEditingController();
 
+  Future getscore() async{
+    String highScore = await GoogleSheetsApi.fetch();
+    print(highScore);
+    return highScore;
+  }
+
+  
+  //Future<dynamic> leaderScore = getscore();
+
   GameOverMenu({super.key, required this.game});
 
   @override
@@ -28,19 +37,25 @@ class GameOverMenu extends StatelessWidget {
           // Game Over Screen
           Padding(
             padding: EdgeInsets.symmetric(vertical: 30.0),
-            child: Text(
-              'Game Over',
-              style: TextStyle(
-                fontSize: 50.0,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    blurRadius: 20.0,
-                    color: Color.fromARGB(0, 92, 225, 230),
-                    offset: Offset(0, 0),
-                  )
-                ],
-              ),
+            child: Column(
+              children: [
+                Text(
+                  'Game Over',
+                  style: TextStyle(
+                    fontSize: 50.0,
+                    color: Colors.white,
+                    shadows: [
+                      Shadow(
+                        blurRadius: 20.0,
+                        color: Color.fromARGB(0, 92, 225, 230),
+                        offset: Offset(0, 0),
+                      )
+                    ],
+                  ),
+                ),
+                Text('Your Score is $score'),
+                //Text('Current HighScore is $getscore()'),
+              ],
             ),
           ),
 
