@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,11 @@ import 'models/player_data.dart';
 import 'models/spaceship_details.dart';
 
 Future<void> main() async {
+
+//set in portrait mode
+  SystemChrome.setPreferredOrientations([   DeviceOrientation.portraitUp,
+  ]);
+
   GoogleSheetsApi().init();
   WidgetsFlutterBinding.ensureInitialized();
 
