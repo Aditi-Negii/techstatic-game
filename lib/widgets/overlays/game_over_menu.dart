@@ -17,13 +17,7 @@ class GameOverMenu extends StatelessWidget {
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController nameController = TextEditingController();
 
-  Future getscore() async{
-    String highScore = await GoogleSheetsApi.fetch();
-    print(highScore);
-    return highScore;
-  }
-
-  
+  String high = GoogleSheetsApi().currentHighestScore;
   //Future<dynamic> leaderScore = getscore();
 
   GameOverMenu({super.key, required this.game});
@@ -54,7 +48,7 @@ class GameOverMenu extends StatelessWidget {
                   ),
                 ),
                 Text('Your Score is $score'),
-                //Text('Current HighScore is $getscore()'),
+                //Text('Current HighScore is $high'),
               ],
             ),
           ),
