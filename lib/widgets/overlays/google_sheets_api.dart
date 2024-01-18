@@ -22,7 +22,7 @@ class GoogleSheetsApi{
   static const spreadsheetId =  '1k1wDVTErIPNNZzAgP6XQNIRmpDaS2yRXJIZJVSWP6Vk';
   static final _gsheets = GSheets(credentials);
   static Worksheet? _workSheet;
-  late String currentHighestScore;
+  // late String currentHighestScore;
 
   Future init() async{
     final ss = await _gsheets.spreadsheet(spreadsheetId);

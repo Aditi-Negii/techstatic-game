@@ -17,7 +17,7 @@ class GameOverMenu extends StatelessWidget {
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController nameController = TextEditingController();
 
-  String high = GoogleSheetsApi().currentHighestScore;
+  // String high = GoogleSheetsApi().currentHighestScore;
   //Future<dynamic> leaderScore = getscore();
 
   GameOverMenu({super.key, required this.game});
